@@ -17,7 +17,6 @@ const contactsSlice = createSlice({
             })
         },
         onDeleteContact(state, action) {
-//state.contacts = state.contacts.filter(item => item.id !== action.payload); //запись изменения стейта используя IMMER
             return {
                 ...state,
                 contacts: state.contacts.filter(item => item.id !== action.payload)
@@ -26,11 +25,10 @@ const contactsSlice = createSlice({
     }
 });
 
-//конфигурация для reducer 
 const persistConfig = {
 	key: 'root',
 	storage,
-	whitelist: ['contacts'], //сохранить только контакты 
+	whitelist: ['contacts'], 
 };
 
 export const contactReducer = persistReducer(

@@ -12,7 +12,6 @@ export const App = () => {
   const contacts = useSelector(getContacts);
   const filterName = useSelector(getFilter);
   
-// Добавляет контакт в список
    const addContact = ({ name, number }) => {
     const normalizedFind = name.toLowerCase();
     const findName = contacts.find(
@@ -37,7 +36,6 @@ export const App = () => {
     dispatch(filterContacts(value));
   };
 
- // Возвращает результат фильтра
   const getFilterContact = () => {
     if (!filterName) {
       return contacts;
